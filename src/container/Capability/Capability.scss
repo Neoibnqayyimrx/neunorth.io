@@ -1,0 +1,115 @@
+.app__capability {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-top: 3rem;
+
+  // Normal row: button on left, image on right
+  flex-direction: row;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
+}
+
+.app__capability-media {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start; // Align image to left
+
+  img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+}
+
+.app__capability-content {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; // Align button to right
+  align-items: center;
+  height: 100%;
+}
+
+.app__capability-btn {
+  padding: 1rem 2.5rem;
+  margin: 50px 100px 50px 100px;
+  border-radius: 25px;
+  border: none;
+  font-weight: 600;
+  background: var(--tertiary-color);
+  color: var(--white-color);
+  cursor: pointer;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.head-text {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+
+  span {
+    color: var(--tertiary-color);
+  }
+}
+
+/* MODAL */
+.app__capability-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  backdrop-filter: blur(2px);
+}
+
+.modal__content {
+  background: url("../../assets/bgIMG.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  padding: 2.5rem;
+  border-radius: 18px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--black-color);
+    margin-bottom: 1.5rem;
+  }
+}
+
+.modal__close {
+  margin-top: 2rem;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--tertiary-color);
+  padding: 0.75rem 2rem;
+  border: 2px solid var(--tertiary-color);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--tertiary-color);
+    color: var(--white-color);
+  }
+}

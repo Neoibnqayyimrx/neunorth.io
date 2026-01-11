@@ -1,0 +1,242 @@
+#home {
+  position: relative;
+  background: url("../../assets/bgIMG.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+
+  .app__wrapper {
+    padding: 0;
+
+    .copyright {
+      display: none;
+    }
+  }
+}
+
+/* ================= ROOT ================= */
+
+.app__header {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 6rem 2rem 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* ================= BACKGROUND CIRCLE ================= */
+
+.app__header-bg-circle {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 40%;
+  max-width: 850px;
+  z-index: 1;
+
+  opacity: 0.35;
+  filter: blur(2px);
+  pointer-events: none;
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+  }
+}
+
+/* ================= SIDE CONTENT ================= */
+/* ================= SIDE CONTENT ================= */
+/* ================= SIDE CONTENT ================= */
+
+.app__header-info {
+  position: absolute;
+  z-index: 1;
+  width: auto; // Changed from max-width
+
+  &.left {
+    left: 4%;
+    top: 20%;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transform: translateY(-50%);
+    max-width: 280px; // Keep original max-width only for left
+  }
+
+  &.right {
+    right: 7%;
+    top: 80%;
+    transform: translateY(-50%);
+    text-align: right;
+    width: 420px; // Set fixed width to match tag-cmp
+  }
+
+  .badge-cmp,
+  .tag-cmp {
+    padding: 0.75rem 3rem;
+    background: var(--white-color);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .badge-cmp {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 280px; // Specific for badge
+  }
+
+  .tag-cmp {
+    width: 100%; // Take full width of parent
+    max-width: none; // Remove max-width constraint
+    p {
+      margin: 0;
+      line-height: 1.65;
+      hyphens: auto;
+      text-align: left;
+      word-wrap: break-word; // Ensure text wraps properly
+      overflow-wrap: break-word;
+    }
+  }
+
+  /* Make span behave like emphasized text, not layout noise */
+  .tag-cmp span {
+    color: var(--secondary-color);
+    font-weight: 600;
+    white-space: normal;
+    display: inline;
+  }
+}
+/* ================= CENTER HERO ================= */
+
+.app__header-center {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+
+  .head-text {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.05;
+
+    span {
+      color: var(--secondary-color);
+    }
+  }
+
+  .cta-primary {
+    padding: 1rem 2.4rem;
+    border-radius: 25px;
+    border: none;
+    font-weight: 600;
+    background: var(--tertiary-color);
+    color: var(--white-color);
+    cursor: pointer;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+/* ================= TECH CIRCLES ================= */
+
+.app__header-circles {
+  position: absolute;
+  right: 3%;
+  top: 20%;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  .circle-cmp {
+    border-radius: 50%;
+    background: var(--white-color);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.12);
+
+    img {
+      width: 60%;
+      height: 60%;
+    }
+  }
+
+  .circle-cmp:nth-child(1) {
+    width: 90px;
+    height: 90px;
+  }
+
+  .circle-cmp:nth-child(2) {
+    width: 130px;
+    height: 130px;
+  }
+
+  .circle-cmp:nth-child(3) {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* ================= TABLET ================= */
+
+@media screen and (max-width: 900px) {
+  .app__header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .app__header-info {
+    position: static;
+    transform: none;
+    order: 1;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .app__header-center {
+    order: 2;
+    margin: 1.5rem 0;
+  }
+
+  .app__header-info.right {
+    order: 3;
+  }
+
+  .app__header-circles {
+    position: static;
+    order: 4;
+    margin-top: 2.5rem;
+
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media screen and (max-width: 480px) {
+  .head-text {
+    font-size: clamp(2.2rem, 7vw, 2.8rem);
+  }
+
+  .badge-cmp,
+  .tag-cmp {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .tag-cmp p {
+    text-transform: none;
+  }
+}
