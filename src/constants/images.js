@@ -3,7 +3,6 @@ import supBrt from "../assets/supBrt-bg.png";
 import leap from "../assets/leap-bg.png";
 import superLab from "../assets/superLab.png";
 import heroImage from "../assets/heroImage.png";
-import Leap from "../assets/leap.avif";
 import supBRT from "../assets/supBRT.svg";
 import superlab from "../assets/superlab.svg";
 import redux from "../assets/redux.png";
@@ -25,7 +24,6 @@ export default {
   leap,
   superLab,
   heroImage,
-  Leap,
   supBRT,
   superlab,
   circle,
