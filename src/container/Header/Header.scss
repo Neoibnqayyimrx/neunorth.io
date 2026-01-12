@@ -14,8 +14,6 @@
   }
 }
 
-/* ================= ROOT ================= */
-
 .app__header {
   position: relative;
   min-height: 100vh;
@@ -29,7 +27,6 @@
   overflow: hidden;
 }
 
-/* ================= BACKGROUND CIRCLE ================= */
 
 .app__header-bg-circle {
   position: absolute;
@@ -48,14 +45,10 @@
   }
 }
 
-/* ================= SIDE CONTENT ================= */
-/* ================= SIDE CONTENT ================= */
-/* ================= SIDE CONTENT ================= */
-
 .app__header-info {
   position: absolute;
   z-index: 1;
-  width: auto; // Changed from max-width
+  width: auto; 
 
   &.left {
     left: 4%;
@@ -63,7 +56,7 @@
     padding: 0.5rem 1rem;
     border-radius: 20px;
     transform: translateY(-50%);
-    max-width: 280px; // Keep original max-width only for left
+    max-width: 280px; 
   }
 
   &.right {
@@ -71,7 +64,7 @@
     top: 80%;
     transform: translateY(-50%);
     text-align: right;
-    width: 420px; // Set fixed width to match tag-cmp
+    width: 420px;
   }
 
   .badge-cmp,
@@ -86,23 +79,22 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    max-width: 280px; // Specific for badge
+    max-width: 280px;
   }
 
   .tag-cmp {
-    width: 100%; // Take full width of parent
-    max-width: none; // Remove max-width constraint
+    width: 100%; 
+    max-width: none;
     p {
       margin: 0;
       line-height: 1.65;
       hyphens: auto;
       text-align: left;
-      word-wrap: break-word; // Ensure text wraps properly
+      word-wrap: break-word; 
       overflow-wrap: break-word;
     }
   }
 
-  /* Make span behave like emphasized text, not layout noise */
   .tag-cmp span {
     color: var(--secondary-color);
     font-weight: 600;
@@ -110,7 +102,6 @@
     display: inline;
   }
 }
-/* ================= CENTER HERO ================= */
 
 .app__header-center {
   position: relative;
@@ -133,7 +124,7 @@
   }
 
   .cta-primary {
-    padding: 1rem 2.4rem;
+    padding: 1rem 2.5rem;
     border-radius: 25px;
     border: none;
     font-weight: 600;
@@ -150,7 +141,6 @@
   }
 }
 
-/* ================= TECH CIRCLES ================= */
 
 .app__header-circles {
   position: absolute;
@@ -189,7 +179,6 @@
   }
 }
 
-/* ================= TABLET ================= */
 
 @media screen and (max-width: 900px) {
   .app__header {
@@ -224,7 +213,6 @@
   }
 }
 
-/* ================= MOBILE ================= */
 
 @media screen and (max-width: 480px) {
   .head-text {
