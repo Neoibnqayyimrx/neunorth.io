@@ -2,9 +2,10 @@ import React from 'react';
 import { images } from '../../constants';
 import './Footer.scss';
 
+
 const Footer = () => {
   return (
-    <footer className="app__footer">
+    <footer className="app__footer app__whitebg">
       <div className="app__footer-content">
         <div className="app__footer-logo">
           <img src={images.logo} alt="logo" />

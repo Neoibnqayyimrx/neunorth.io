@@ -92,4 +92,4 @@ const Schedule = () => {
   );
 };
 
-export default AppWrap(Schedule, 'schedule');
+export default AppWrap(Schedule, 'schedule', 'app__primarybg');

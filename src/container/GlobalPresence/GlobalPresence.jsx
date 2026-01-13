@@ -79,4 +79,4 @@ const GlobalPresence = () => {
   );
 };
 
-export default AppWrap(GlobalPresence, "global");
+export default AppWrap(GlobalPresence, "global", 'app__whitebg');
