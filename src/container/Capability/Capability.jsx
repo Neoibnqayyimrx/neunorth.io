@@ -13,7 +13,7 @@ const Capability = () => {
     const query = `*[_type == "capability"]`;
     client.fetch(query).then((data) => {
       if (data?.length) setCapabilityData(data[0]);
-    });
+    }).catch((err) => console.error('Failed to load capability:', err));
   }, []);
 
   if (!capabilityData) return null;

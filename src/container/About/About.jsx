@@ -4,13 +4,33 @@ import "./About.scss";
 import { AppWrap } from "../../wrapper";
 import { urlFor, client } from '../../client';
 
+const ProfileCard = ({ about }) => (
+  <motion.div
+    whileInView={{ opacity: 1 }}
+    whileHover={{ scale: 1.1 }}
+    transition={{ duration: 0.5, type: "tween" }}
+    className="app__profile-item"
+  >
+    <img src={urlFor(about.imgUrl)} alt={about.title} />
+    <h2 className="bold-text" style={{ marginTop: 20 }}>
+      {about.title}
+    </h2>
+    <p className="bold-text" style={{ marginTop: 10 }}>
+      {about.description}
+    </p>
+  </motion.div>
+);
+
 const About = () => {
   const [abouts, setAbouts] = useState([]);
 
   
   useEffect(() => {
     const query = `*[_type == "abouts"]`;
-    client.fetch(query).then((data) => setAbouts(data));
+    client
+      .fetch(query)
+      .then((data) => setAbouts(data))
+      .catch((err) => console.error('Failed to load about content:', err));
   }, []);
 
   
@@ -18,22 +38,6 @@ const About = () => {
   const solutions = abouts.filter(item => item.section === "solution");
 
   
-  const ProfileCard = ({ about }) => (
-    <motion.div
-      whileInView={{ opacity: 1 }}
-      whileHover={{ scale: 1.1 }}
-      transition={{ duration: 0.5, type: "tween" }}
-      className="app__profile-item"
-    >
-      <img src={urlFor(about.imgUrl)} alt={about.title} />
-      <h2 className="bold-text" style={{ marginTop: 20 }}>
-        {about.title}
-      </h2>
-      <p className="bold-text" style={{ marginTop: 10 }}>
-        {about.description}
-      </p>
-    </motion.div>
-  );
 
   return (
     <>

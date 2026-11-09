@@ -25,7 +25,7 @@ const Schedule = () => {
       if (data && data.length > 0) {
         setScheduleData(data[0]); // Get the first document
       }
-    });
+    }).catch((err) => console.error('Failed to load schedule:', err));
   }, []);
 
   if (!scheduleData) {

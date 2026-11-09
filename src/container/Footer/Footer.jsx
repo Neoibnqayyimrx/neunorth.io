@@ -1,5 +1,5 @@
 import React from 'react';
-import { images } from '../../constants';
+import { images, sections } from '../../constants';
 import './Footer.scss';
 
 
@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="app__footer-column">
             <h3 className="head-text">Navigation</h3>
             <ul>
-              {['home', 'about', 'schedule', 'global', 'capability'].map((item) => (
+              {sections.map((item) => (
                 <li key={`footer-${item}`}>
                   <a href={`#${item}`} className="p-text">{item}</a>
                 </li>
