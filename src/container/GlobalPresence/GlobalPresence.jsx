@@ -15,7 +15,10 @@ const GlobalPresence = () => {
 
   useEffect(() => {
     const query = `*[_type == "globalPresence"] | order(_createdAt asc)`;
-    client.fetch(query).then(setPresence);
+    client
+      .fetch(query)
+      .then(setPresence)
+      .catch((err) => console.error('Failed to load global presence:', err));
   }, []);
 
   return (
@@ -44,7 +47,7 @@ const GlobalPresence = () => {
           }}
         >
           {presence.map((item, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={item._id ?? index}>
               <motion.div
                 className="app__global-card"
                 whileHover={{ y: -6 }}

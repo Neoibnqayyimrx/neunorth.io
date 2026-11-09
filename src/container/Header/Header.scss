@@ -201,6 +201,8 @@
 
   .app__header-info.right {
     order: 3;
+    width: 100%;
+    max-width: 420px;
   }
 
   .app__header-circles {
@@ -215,7 +217,7 @@
 
 
 @media screen and (max-width: 480px) {
-  .head-text {
+  .app__header-center .head-text {
     font-size: clamp(2.2rem, 7vw, 2.8rem);
   }
 
@@ -226,5 +228,13 @@
 
   .tag-cmp p {
     text-transform: none;
+  }
+
+  .app__header-circles {
+    gap: 0.8rem;
+
+    .circle-cmp:nth-child(1) { width: 70px; height: 70px; }
+    .circle-cmp:nth-child(2) { width: 100px; height: 100px; }
+    .circle-cmp:nth-child(3) { width: 56px; height: 56px; }
   }
 }
